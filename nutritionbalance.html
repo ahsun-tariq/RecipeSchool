@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Recipe School by Developer's Creed 2018</title>
+	<!-- favicon -->
+    <link rel="shortcut icon" href="Imagea/favicon.png"/>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- after bootstrap, as it overrides ; ???? -->
+    <link href="recipe_school_demo.css" rel="stylesheet" type="text/css">
+	<!-- link to google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+	<!-- start container -->
+	<div class="container">
+	<!-- start logo -->
+		<div class="row">
+		<div class="col-md-12 container_logo"><a href="recipe_school.php">
+		<img src="Images/logo_00.png" class="img-logo hidden-xs" width="960px"></a></div>
+		</div>
+	<!--search bar -->
+	<!--search by name -->
+
+		<div class="container_search">
+			<div class="row">
+				<div class="col-md-12 container_search">
+					<br><font color=#FFFFFF><strong>&nbsp Search by name:</strong></font>
+
+					<form action = "search_recipe.php" method="POST" enctype="application/x-www-form-urlencoded">
+
+						<b Search a recipe></b>
+						<input type ="text" name="name" class="search_window" id="search" value="Search by name">
+						<input type ="submit" name="recipe_search" class="btn" width="81px" height="36px" value="">
+				</div>
+			</div>
+			<!--search by category -->
+			<div class="row">
+				<div class="col-md-4 container_search">
+					<br><font color=#FFFFFF><strong>&nbsp Search by category:</strong></font>
+					<p><select name="category" class="category_bar" >
+						<option value = "appetizer">Appetizers</option>
+						<option value = "burger">Burger</option>
+						<option value = "dessert">Dessert</option>
+						<option value = "pizza">Pizza</option>
+						<option value = "pasta">Pasta</option>
+						<option value = "sandwich">Sandwiches</option>
+						<option value = "rice">Rice</option>
+						<option value = "continental">Continental</option>
+						<option value = "steak">Steaks</option>
+						<option value = "misc">Miscellaneous</option>
+					</select>
+						<input type ="submit" name="category_search" class="btn" width="81px" height="36px" value=""/></p></form>
+				</div>
+				<!-- Add your Recipe btn -->
+				<div class="col-md-8 container_search">
+					<div class="add_recipe_btn_margin">
+						<form action = "add_recipe.html" method="POST" enctype="application/x-www-form-urlencoded">
+							<p><input type ="submit" class="add_recipe_btn" name="add_recipe" value=""/></p></form>
+					</div></div>
+			</div>
+      <div id ="ajaxList"></div>
+		</div>
+		<!--end search bar -->
+
+		<br>
+	<!-- main photo-->
+
+		<div class="row">
+			<div class="col-md-12">
+			<div><img src="Images/img_nutrition_balance2.jpg" class="img-responsive frontpage_img"><div class="frontpage_img_text"><p class="frontpage_img_text2"><h4><a href="https://www.msdmanuals.com/en-gb/home/disorders-of-nutrition/overview-of-nutrition/carbohydrates,-proteins,-and-fats" target="_blank">Carbohydrates</h4> <h4>protains</h4> <h4>and fats</h4><h5>&nbsp</h5>
+			<p><a href="https://www.nutrition.gov/subject/whats-in-food/carbohydrates-proteins-fats-fiber/proteins" target="_blank">Carbohydrates,</a> <a href="https://www.nutrition.gov/subject/whats-in-food/carbohydrates-proteins-fats-fiber/proteins" target="_blank">proteins,</a> and <a href="https://www.nutrition.gov/subject/whats-in-food/carbohydrates-proteins-fats-fiber/fats" target="_blank">fats</a> supply 90% of the dry weight of the diet and 100% of its energy. All three provide energy (measured in calories), but the amount of energy in 1 gram (1/28 ounce) differs:</p>
+				<li>4 calories in a gram of carbohydrate or protein</li>
+				<li>9 calories in a gram of fat</li>
+			<p>These nutrients also differ in how quickly they supply energy. Carbohydrates are the quickest, and fats are the slowest.</p>
+			<p>Carbohydrates, proteins, and fats are digested in the intestine, where they are broken down into their basic units:</p>
+				<li>Carbohydrates into sugars</li>
+				<li>Proteins into amino acids</li>
+				<li>Fats into fatty acids and glycerol</li>
+			<p>The body uses these basic units to build substances it needs for growth, maintenance, and activity (including other carbohydrates, proteins, and fats).</p><p>&nbsp</p><small><a href="https://www.nutrition.gov/subject/whats-in-food/carbohydrates-proteins-fats-fiber/proteins" target="_blank">nutrition.gov /</a> <a href="https://www.msdmanuals.com/en-gb/home/disorders-of-nutrition/overview-of-nutrition/carbohydrates,-proteins,-and-fats" target="_blank">msdmanuals.com</a></small></p>
+			</div>
+			</div>
+			</div></div>
+	<!-- end main photo-->
+		<br><br>
+	<!--
+		<div class="row">
+		<div class="col-md-12">
+		<div class="cpf_container">
+		<h3><a href="https://www.msdmanuals.com/en-gb/home/disorders-of-nutrition/overview-of-nutrition/carbohydrates,-proteins,-and-fats" target="_blank">Carbohydrates, protains and fats</h3>
+			<p><a href="https://www.nutrition.gov/subject/whats-in-food/carbohydrates-proteins-fats-fiber/proteins" target="_blank">Carbohydrates,</a> <a href="https://www.nutrition.gov/subject/whats-in-food/carbohydrates-proteins-fats-fiber/proteins" target="_blank">proteins,</a> and <a href="https://www.nutrition.gov/subject/whats-in-food/carbohydrates-proteins-fats-fiber/fats" target="_blank">fats</a> supply 90% of the dry weight of the diet and 100% of its energy. All three provide energy (measured in calories), but the amount of energy in 1 gram (1/28 ounce) differs:</p>
+				<li>4 calories in a gram of carbohydrate or protein</li>
+				<li>9 calories in a gram of fat</li>
+			<p>These nutrients also differ in how quickly they supply energy. Carbohydrates are the quickest, and fats are the slowest.</p>
+			<p>Carbohydrates, proteins, and fats are digested in the intestine, where they are broken down into their basic units:</p>
+				<li>Carbohydrates into sugars</li>
+				<li>Proteins into amino acids</li>
+				<li>Fats into fatty acids and glycerol</li>
+			<p>The body uses these basic units to build substances it needs for growth, maintenance, and activity (including other carbohydrates, proteins, and fats).</p><small>nutrition.gov / msdmanuals.com</small>
+		</div></div></div>-->
+	<br><br>
+	<!--1st article div row-->
+	<!--NHS article div1 -->
+		<div class="row">
+		<div class="col-md-6">
+			<h2><a href="https://www.nhs.uk/Livewell/5ADAY/Pages/Whatcounts.aspx" target="_blank">5 A Day: what counts?</h2></a>
+			<p>Almost all fruit and vegetables count towards your 5 A Day, so it may be easier than you think to get your recommended daily amount.</p>
+			<h4><strong>At a glance: what counts?</strong></h4>
+					<ul><li>80g of fresh, canned and or frozen fruit and vegetables counts as one 5 A Day portion. Opt for tinned or canned fruit and vegetables in natural juice or water, with no added sugar or salt.</li>
+					<li>30g of dried fruit (this is equivalent to around 80g fresh fruit) counts as one 5 A Day portion. Dried fruit should be eaten at mealtimes, not as a between-meal snack, to reduce the risk of tooth decay.</li></ul>
+		</div>
+	<!--NHS article div2 -->
+		<div class="col-md-6">
+				<h1>&nbsp</h1>
+				<h1>&nbsp</h1>
+				<small>&nbsp</small>
+				<p>Some portions only count once in a day:</p>
+					<ul>
+					<li>150ml fruit juice, vegetable juice or smoothie. Limit the amount you drink to a combined total of 150ml a day. Crushing fruit and vegetables into juice and smoothies releases the sugars contained in the fruit and vegetables, which can cause damage to teeth. Juices and smoothies should be consumed at mealtimes, not as a between-meal snack, to reduce the risk of tooth decay.</li>
+					<li>80g of beans and pulses. These only count once as part of your 5 A Day, no matter how many you eat. This is because, although they are a good source of fibre, they contain fewer nutrients than other fruits and vegetables.</li></ul>
+				<p>For more on typical portion sizes, see 5 A Day portion sizes.</p>
+				<h1>&nbsp</h1>
+		</div></div>
+	<!-- 2nd article div row-->
+		<div class="row">
+	<!--NHS article div3 -->
+		<div class="col-md-6">
+			<h4><strong>Different types of fruit and veg</strong></h4>
+				<p>Fruit and vegetables don't have to be fresh to count as a portion. Nor do they have to be eaten on their own: they also count if they're part of a meal or dish.The following all also count towards your 5 A Day:</p>
+					<ul><li>Frozen fruit and vegetables.</li>
+					<li>Tinned or canned fruit and vegetables. Buy ones tinned in natural juice or water, with no added sugar or salt.
+					<li>Fruit and vegetables cooked in dishes such as soups, stews or pasta.</li>
+					<li>A 30g portion of dried fruit, such as currants, dates, sultanas and figs, counts as one of your 5 A Day, but should be eaten at mealtimes, not as a between-meal snack, to reduce the impact on teeth. </li>
+					<li>Fruit and vegetables in convenience foods, such as ready meals and shop-bought pasta sauces, soups and puddings.</li>
+				<p>&nbsp</p></ul>
+				<p>Some ready-made foods are high in salt, sugar and fat, so only have them occasionally or in small amounts. You can find the salt, sugar and fat content of ready-made foods on the label. For more information, seeour page on food labels.</p>
+		</div>
+		<!--image 1 div-->
+		<div class="col-md-6">
+		<h5>&nbsp</h5>
+		<div><center><img src="Images/img_nutrition_balance1.jpg" class="img-responsive"></center></div>
+		</div>
+		</div>
+	<!--break-->
+		<div class="row"><dic class="col-md-12"><h3>&nbsp</h3></dic></div>
+	<!-- 3rd article div row-->
+	<!--NHS article div4 -->
+		<div class="row">
+		<div class="col-md-6">
+			<h4><strong>Drinks and 5 A Day</strong></h4>
+					<ul><li>Keep an eye on the amount of fruit juice and smoothies you drink. The current advice is to limit consumption of fruit/vegetable juices and smoothies to a combined total of 150ml a day (one portion). Crushing fruit into juice also releases the sugars contained in the fruit, which can cause damage to teeth. Even unsweetened fruit juice and smoothies are sugary, so limit these to a combined total of 150ml a day.</li>
+					<li>Diluting with water (still or sparkling) can make 150ml of fruit juice go further, if you're thirsty.</li>
+					<h5>&nbsp</h5></ul>
+					<p>Remember to keep fruit juice and smoothies to mealtimes, to reduce the impact on teeth.</p>
+			<h1>&nbsp</h1>
+			<h4><strong>Do potatoes count towards my 5 A Day?</strong></h4>
+				<p>No.Potatoes are a starchy food and a great source of energy, fibre, B vitamins and potassium. </p>
+				<p>In the UK, we get a lot of our vitamin C from potatoes. Although they typically only contain around 11-16mg of vitamin C per 100g of potatoes, we generally eat a lot of them.</p>
+				<p>When eaten as part of a meal, potatoes are generally used in place of other sources of starch, such as bread, pasta or rice. Because of this, they don't count towards your 5 A Day.</p>
+				<p>Other vegetables that don't count towards your 5 A Day are yams, cassava and plantain. They are also usually eaten as starchy foods.</p>
+				<p>Sweet potatoes, parsnips, swedes and turnips do count towards your 5 A Day, because they are usually eaten in addition to the starchy food part of the meal.</p>
+				<p>Potatoes play an important role in your diet, even if they aren't cooked with salt or fat, even if they don't count towards your 5 A Day. It's best to eat them without any added salt or fat. </p>
+				<p>They're also a good source of fibre, so leave the skins on where possible, to keep in more of the fibre and vitamins. For example, if you're having boiled potatoes or a jacket potato, make sure you eat the skin too.</p> 
+		</div>
+	<!--blank+image2 div-->
+		<div class="col-md-6">
+		<p align="right"><h5>&nbsp</h5>
+		<div><img src="Images/img_nutrition_balance3.jpg" class="img-responsive">
+			<h1>&nbsp</h1>
+			<h1>&nbsp</h1>
+			<h1>&nbsp</h1>
+			<h4>&nbsp</h4>
+			<h5><a href="https://www.nhs.uk/Livewell/5ADAY/Pages/Whatcounts.aspx">Article from NHS Choices: Your health, your choices</a></h5></div>
+		<br>
+	<!--other article link-->
+		<h5><strong>Find out more...</strong></h5>
+		<small>&nbsp</small>
+	<!--BHF article link-->
+		<a href="https://www.bhf.org.uk/heart-matters-magazine/nutrition/5-a-day/get-your-5-a-day"><h4>20 easy ways to get your 5-a-day</h4></a>
+		<small>From British Heart foundation</small>
+		<br><br>
+	<!--BNF article link-->
+		<a href="https://www.nutrition.org.uk/healthyliving/healthydiet/healthybalanceddiet.html"><h4>A healthy, balanced diet - British Nutrition Foundation</h4></a>
+		<small>From British Nutrition Foundation</small></p>
+		</div>
+		</div>
+		<br><br>
+	<!--ankle-->
+		<div class="row"><div class="col-md-12"><div><p align="right">&nbsp<img src="Images/ankle.gif"></p></div></div></div>
+	<!-- footer -->
+		<div id="footer">
+		</div>
+
+	<!-- end container -->
+
+	</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+      document.getElementById("search").value="";
+
+      $('#search').keyup(function(){
+        var ele = document.createElement("div");
+        ele.setAttribute("id","list");
+        par = document.getElementById("ajaxList");
+        par.appendChild(ele);
+        var query = $(this).val();
+        if(query != ''){
+
+
+          $.ajax({
+            url:"ajax_search.php",
+            method: "post",
+            data: {query:query},
+            success:function(data){
+                $('#list').fadeIn();
+                $('#list').html(data);
+
+            }
+          });
+        }
+        if(document.getElementById("search").value=="")
+        $('#list').remove();
+      });
+
+    });
+    </script>
+  </body>
+</html>

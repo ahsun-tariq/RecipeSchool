@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Recipe School by Developer's Creed 2018</title>
+	<!-- favicon -->
+    <link rel="shortcut icon" href="Images/rsbdc_favicon.png"/>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- after bootstrap, as it overrides ; ???? -->
+    <link href="recipe_school_demo.css" rel="stylesheet" type="text/css">
+	<!-- link to google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+	<!-- start container -->
+	<div class="container">
+	<!-- start small logo -->
+		<div class="row">
+		<div class="col-md-12 container_logo_simple"><a href="recipe_school.php">
+		<img src="Images/logo_002.png" class="img-logo hidden-xs" width="960px"></a></div>
+		</div>
+	<!--search bar -->
+	<!--search by name -->
+	<div class="container_search">
+		<div class="row">
+		<div class="col-md-12 container_search">
+		<br><font color=#FFFFFF><strong>&nbsp Search by name:</strong></font>
+		<form action = "search_recipe.php" method="POST" enctype="application/x-www-form-urlencoded">
+    	<b Search a recipe></b>
+    	<input type ="text" name="name" class="search_window" id="search" value="Search by name">
+		<input type ="submit" name="recipe_search" class="btn" width="81px" height="36px" value="">
+		</div>
+		</div>
+		<!--search by category -->
+		<div class="row">
+		<div class="col-md-12 container_search">
+		<br><font color=#FFFFFF><strong>&nbsp Search by category:</strong></font>
+	    <p><select name="category" class="category_bar" >
+        <option value = "appetizer">Appetizers</option>
+        <option value = "burger">Burger</option>
+        <option value = "dessert">Dessert</option>
+        <option value = "pizza">Pizza</option>
+        <option value = "pasta">Pasta</option>
+        <option value = "sandwich">Sandwiches</option>
+        <option value = "rice">Rice</option>
+        <option value = "continental">Continental</option>
+        <option value = "steak">Steaks</option>
+        <option value = "misc">Miscellaneous</option>
+   		</select>
+		<input type ="submit" name="category_search" class="btn" width="81px" height="36px" value=""/></p>
+		</div>
+		</div>
+    <div id ="ajaxList"></div>
+	</div>
+		</form>
+
+		<br>
+
+	<div class="container", id= "mainDiv">
+	<form action = "addScript.php" method="post" id="form" enctype="multipart/form-data">
+    <b add a recipe></b>
+	<br>
+    <p> Recipe Name: <input type ="text" name="name" id ="name" size="30" value="" /></p>
+
+    <p> Category <select name="category"  id ="category">
+        <option value = "appetizer">Appetizers</option>
+        <option value = "burger">Burger</option>
+        <option value = "dessert">Dessert</option>
+        <option value = "pizza">Pizza</option>
+        <option value = "pasta">Pasta</option>
+        <option value = "sandwich">Sandwiches</option>
+        <option value = "rice">Rice</option>
+        <option value = "continental">Continental</option>
+        <option value = "steak">Steaks</option>
+        <option value = "misc">Miscellaneous</option>
+    </select></p>
+
+    <p> Cuisine <select name="cuisine" id ="cuisine">
+        <option value = "american">American</option>
+        <option value = "british">British</option>
+        <option value = "italian">Italian</option>
+        <option value = "french">French</option>
+        <option value = "european">Other European</option>
+        <option value = "mexican">Mexican</option>
+        <option value = "chinese">Chinese</option>
+        <option value = "korean">Korean</option>
+        <option value = "indopak">Indian/Pakistani</option>
+        <option value = "asian">Other Asian</option>
+        <option value = "misc">Miscellaneous</option>
+    </select></p>
+
+    <p> Ingredients: <input type ="text" name="ingredients" id ="ingredients" class="ingredients_window" value="" /></p>
+	<p> Time Required (Minutes): <input type ="text" name="time" id ="time" size="10" value="" /></p>
+	<p> Serves: <input type ="text" name="serves" id ="serves" size="5" value="" /></p>
+	<br>
+	<p> Image One: <input type ="file" name="image_one" id="image_one"  /></p>
+	<br>
+
+	<p> Image Two: <input type ="file" name="image_two"  id="image_two"/></p>
+	<br>
+
+	<p> Image Three: <input type ="file" name="image_three"  id="image_three"/></p>
+	<br>
+	<p> Image Four: <input type ="file" name="image_four" id="image_four"/></p>
+	<br>
+  <p> Number of steps for your recipe <select name="steps"  id=steps onchange="createSteps(this.id)">
+
+  </select></p>
+    </div>
+
+
+
+    <p> <input type ="submit" name="submit" id= "button" class="submit_btn" value=""/></p>
+
+
+</form>
+
+		<div id="footer">
+		</div>
+    <script>
+    var stepList = [];
+    var stepName;
+    var select = document.getElementById("steps");
+      for(var i=0; i<50;i++){
+        var option = document.createElement("OPTION");
+        field = document.createTextNode(i+1);
+        option.appendChild(field);
+        select.insertBefore(option,select.lastChild);
+      }
+    var flag = false;
+    var parent = document.getElementById("mainDiv");
+
+
+    function createSteps(id){
+      stepList=[];
+      if(flag){
+        var ele = document.getElementById("myDiv");
+        ele.remove();
+      }
+
+      var div = document.createElement("div");
+      parent.appendChild(div);
+      div.setAttribute("id","myDiv");
+      var element = document.getElementById(id);
+
+      var value = element.value;
+      for(i=0;i<value;i++){
+        var para = document.createElement("p");
+        var input = document.createElement("INPUT");
+        var br = document.createElement("BR");
+        var stepValue = i+1;
+        para.innerHTML = "Step Number " + stepValue + ": ";
+
+        input.setAttribute("type","text");
+        input.setAttribute("class","step_window");
+        input.setAttribute("value","");
+        stepName = "step" + stepValue;
+
+        input.setAttribute("name",stepName);
+        input.setAttribute("id",stepName);
+        console.log(stepName);
+        console.log("\n");
+        div.appendChild(para);
+        para.appendChild(input);
+        div.appendChild(br);
+        stepList.push(stepName);
+
+
+        flag = true;
+
+
+      }
+    }
+    createSteps("steps");
+    </script>
+	<!-- end container -->
+
+	</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script >
+
+    $( "#button" ).click(function( event ) {
+
+      var valueOfDiv = $("#divThatYouCanWriteStuffIn").text();
+      event.preventDefault();
+      var name = document.getElementById("name").value;
+      var category = document.getElementById("category").value;
+      var cuisine = document.getElementById("cuisine").value;
+      var ingredients = document.getElementById("ingredients").value;
+      var time = document.getElementById("time").value;
+      var serves = document.getElementById("serves").value;
+      var image_one = document.getElementById("image_one").value;
+
+    //   var data = {"name": name, "category":category,
+    //               "cuisine":cuisine, "ingredients":ingredients,
+    //               "time":time, "serves":serves, "image_one":image_one
+    //
+    // };
+
+    var form = $('form')[0]; // You need to use standard javascript object here
+    var formData = new FormData(form);
+
+    var formData = new FormData();
+    formData.append("name", name);
+    formData.append("category", category);
+    formData.append("cuisine", cuisine);
+    formData.append("ingredients", ingredients);
+    formData.append("time", time);
+    formData.append("serves", serves);
+
+// Attach file
+    formData.append('image_one', document.getElementById('image_one').files[0]);
+    formData.append('image_two', document.getElementById('image_two').files[0]);
+    formData.append('image_three', document.getElementById('image_three').files[0]);
+    formData.append('image_four', document.getElementById('image_four').files[0]);
+
+    stepList.forEach(function(item) {
+      var step = document.getElementById(item).value;
+      formData.append(item, step);
+      // data[item]=step;
+      });
+
+
+
+
+
+$.ajax({ url: 'addScript.php',
+
+
+          type: 'post',
+          data: formData,
+          contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+          processData: false,
+     success: function(output) {
+                  alert(output);
+
+              },
+      error: function(request, status, error){
+        alert("Error: Could not issue ajax request");
+      }
+});
+
+
+
+});
+
+
+
+    </script>
+    <script>
+    $(document).ready(function(){
+
+      document.getElementById("search").value="";
+
+      $('#search').keyup(function(){
+        var ele = document.createElement("div");
+        ele.setAttribute("id","list");
+        par = document.getElementById("ajaxList");
+        par.appendChild(ele);
+        var query = $(this).val();
+        if(query != ''){
+
+
+          $.ajax({
+            url:"ajax_search.php",
+            method: "post",
+            data: {query:query},
+            success:function(data){
+                $('#list').fadeIn();
+                $('#list').html(data);
+
+            }
+          });
+        }
+        if(document.getElementById("search").value=="")
+        $('#list').remove();
+      });
+
+    });
+    </script>
+  </body>
+</html>

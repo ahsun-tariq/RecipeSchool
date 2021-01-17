@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Recipe School by Developer's Creed 2018</title>
+	<!-- favicon -->
+    <link rel="shortcut icon" href="Images/rsbdc_favicon.png"/>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- after bootstrap, as it overrides ; ???? -->
+    <link href="recipe_school_demo.css" rel="stylesheet" type="text/css">
+	<!-- link to google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+	<!-- start container -->
+	<div class="container">
+	<!-- start logo -->
+		<div class="row">
+		<div class="col-md-12 container_logo"><a href="recipe_school.php">
+		<img src="Images/logo_00.png" class="img-logo hidden-xs" width="960px"></a></div>
+		</div>
+	<!--search bar -->
+	<!--search by name -->
+
+		<div class="container_search">
+			<div class="row">
+				<div class="col-md-12 container_search">
+					<br><font color=#FFFFFF><strong>&nbsp Search by name:</strong></font>
+
+					<form action = "search_recipe.php" method="POST" enctype="application/x-www-form-urlencoded">
+
+						<b Search a recipe></b>
+						<input type ="text" name="name" class="search_window" id="search" value="Search by name">
+						<input type ="submit" name="recipe_search" class="btn" width="81px" height="36px" value="">
+				</div>
+			</div>
+			<!--search by category -->
+			<div class="row">
+				<div class="col-md-4 container_search">
+					<br><font color=#FFFFFF><strong>&nbsp Search by category:</strong></font>
+					<p><select name="category" class="category_bar" >
+						<option value = "appetizer">Appetizers</option>
+						<option value = "burger">Burger</option>
+						<option value = "dessert">Dessert</option>
+						<option value = "pizza">Pizza</option>
+						<option value = "pasta">Pasta</option>
+						<option value = "sandwich">Sandwiches</option>
+						<option value = "rice">Rice</option>
+						<option value = "continental">Continental</option>
+						<option value = "steak">Steaks</option>
+						<option value = "misc">Miscellaneous</option>
+					</select>
+						<input type ="submit" name="category_search" class="btn" width="81px" height="36px" value=""/></p></form>
+				</div>
+				<!-- Add your Recipe btn -->
+				<div class="col-md-8 container_search">
+					<div class="add_recipe_btn_margin">
+						<form action = "add_recipe.html" method="POST" enctype="application/x-www-form-urlencoded">
+							<p><input type ="submit" class="add_recipe_btn" name="add_recipe" value=""/></p></form>
+					</div></div>
+			</div>
+      <div id ="ajaxList"></div>
+		</div>
+		<!--end search bar -->
+
+		<br>
+	<!-- photo row 1-->
+
+		<div class="row">
+			<div class="col-md-12">
+			<div><center><img src="Images/img_breadsfriends.jpg" class="img-responsive"></center></div>
+			</div>
+		</div>
+
+	<!-- end photo row 1 -->
+		<br><br>
+	<!--description starts-->
+		<!--butter-->
+		<div class="row">
+		<div class="col-md-3">
+			<h3><a href="https://en.wikipedia.org/wiki/Butter">Butter</a></h3>
+		<p>Butter is a dairy product containing up to 80% butterfat (in commercial products) which is solid when chilled and at room temperature in some regions and liquid when warmed. It is made by churning fresh or fermented cream or milk to separate the butterfat from the buttermilk. It is generally used as a spread on plain or toasted bread products and a condiment on cooked vegetables, as well as in cooking, such as baking, sauce making, and pan frying. Butter consists of butterfat, milk proteins and water, and in some types, added salt. Butter may also be sold with added flavourings, such as garlic butter. Most frequently made from cows' milk, butter can also be manufactured from the milk of other mammals, including sheep, goats, buffalo, and yaks. Salt such as dairy salt, flavorings, preservatives are sometimes added to butter. Rendering butter produces clarified butter or ghee, which is almost entirely butterfat.</p>
+		<!--Pate-->
+			<h3><a href="https://en.wikipedia.org/wiki/Pâté">Pâté</a></h3>
+		<p>Pâté is a mixture of cooked ground meat and fat minced into a spreadable paste. Common additions include vegetables, herbs, spices, and either wine or brandy. Pâté can be served either hot or cold, but it is considered to develop its fullest flavor after a few days of chilling.</p>
+		<!--Tapenade-->
+			<h3><a href="https://en.wikipedia.org/wiki/Tapenade">Tapenade</a></h3>
+		<p>Tapenade is a Provençal dish consisting of puréed or finely chopped olives, capers, and olive oil. Its name comes from the Provençal word for capers, tapenas. It is a popular food in the south of France, where it is generally eaten as an hors d'œuvre spread on bread, but sometimes it is used to stuff poultry for a main course.</p>
+		</div>
+		<br><br>
+		<!--jam-->
+		<div class="col-md-3">
+			<h3><a href="https://en.wikipedia.org/wiki/Fruit_preserves">Jam(Fruit Preserves)</a></h3>
+		<p>Fruit preserves are preparations of fruits, vegetables and sugar, often canned or sealed for long-term storage. Many varieties of fruit preserves are made globally, including sweet fruit preserves, such as those made from strawberry or apricot, and savory preserves, such as those made from tomatoes or squash. The ingredients used and how they are prepared determine the type of preserves; jams, jellies, and marmalades are all examples of different styles of fruit preserves that vary based upon the fruit used. In English, the word, in plural form, "preserves" is used to describe all types of jams and jellies.</p>
+		<!--Chutney-->
+			<h3><a href="https://en.wikipedia.org/wiki/Chutney">Chutney</a></h3>
+		<p>Chutney is a sauce or a dry base for a sauce in the cuisines of the Indian subcontinent that can include such forms as tomato relish, a ground peanut garnish or a yogurt, cucumber and mint dip.</p> <p>An offshoot that took root in Anglo-Indian cuisine is usually a tart fruit such as sharp apples, rhubarb, damson pickle made milder by an equal weight of sugar.</p> <p>Vinegar was added to the recipe for English-style chutney that traditionally aims to give a long shelf life so that autumn fruit can be preserved for use throughout the year (as are jams, jellies and pickles) or else to be sold as a commercial product. Indian pickles use mustard oil as a pickling agent, but Anglo-Indian style chutney uses malt or cider vinegar which produces a milder product that in western cuisine is usually eaten with a Cheddar-type cheese or with cold meats and fowl, typically in cold pub lunches. </p><p>Nowadays, the making of some pickles and chutneys in India has been passed over to commercial production, whereas at one time it was done entirely in people's homes. ... </p>
+		</div>
+		<br><br>
+		<!--cheese-->
+		<div class="col-md-3">
+			<h3><a href="https://en.wikipedia.org/wiki/Cheese">Cheese</a></h3>
+		<p>Cheese is a dairy product derived from milk that is produced in a wide range of flavors, textures, and forms by coagulation of the milk protein casein. It comprises proteins and fat from milk, usually the milk of cows, buffalo, goats, or sheep. During production, the milk is usually acidified, and adding the enzyme rennet causes coagulation. The solids are separated and pressed into final form. Some cheeses have molds on the rind, the outer layer, or throughout. Most cheeses melt at cooking temperature. Hundreds of types of cheese from various countries are produced. Their styles, textures and flavors depend on the origin of the milk (including the animal's diet), whether they have been pasteurized, the butterfat content, the bacteria and mold, the processing, and aging. Herbs, spices, or wood smoke may be used as flavoring agents. The yellow to red color of many cheeses, such as Red Leicester, is produced by adding annatto. Other ingredients may be added to some cheeses, such as black pepper, garlic, chives or cranberries. For a few cheeses, the milk is curdled by adding acids such as vinegar or lemon juice. Most cheeses are acidified to a lesser degree by bacteria, which turn milk sugars into lactic acid, then the addition of rennet completes the curdling. Vegetarian alternatives to rennet are available; most are produced by fermentation of the fungus Mucor miehei, but others have been extracted from various species of the Cynarathistle family. Cheesemakers near a dairy region may benefit from fresher, lower-priced milk, and lower shipping costs. ... </p>
+		</div>
+		<br><br>
+		<!--Fruit curd-->
+		<div class="col-md-3">
+			<h3><a href="https://en.wikipedia.org/wiki/Fruit_curd">Fruit curd</a></h3>
+		<p>Fruit curd is a dessert spread and topping usually made with citrus fruit, such as lemon, lime, orange, or tangerine.</p><p>Other flavor variations include passion fruit, mango, and berries such as raspberries, cranberries, blackberries. The basic ingredients are beaten egg yolks, sugar, fruit juice, and zest, which are gently cooked together until thick and then allowed to cool, forming a soft, smooth, intensely flavoured spread. Some recipes also include egg whites and/or butter.In late 19th and early 20th century England, home-made lemon curd was traditionally served with bread or scones at afternoon tea as an alternative to jam, and as a filling for cakes, small pastries, and tarts. Homemade lemon curd was usually made in relatively small amounts as it did not keep as well as jam. In more modern times, larger quantities became possible because of the use of refrigeration. <p>Commercially manufactured curds often contain additional preservatives and thickening agents.Contemporary commercially made curds remain a popular spread for bread, scones, toast, waffles, crumpets, pancakes, cheesecake or muffins. They can also be used as a flavoring for desserts or yoghurt. </p>
+		</div>
+		</div>
+		<br><br>
+
+		<br><br>
+
+		<br><br>
+	<!--ankle-->
+		<div class="row"><div class="col-md-12"><div><p align="right">&nbsp<img src="Images/ankle.gif"></p></div></div></div>
+
+	<!-- footer -->
+		<div id="footer">
+		</div>
+
+	<!-- end container -->
+
+	</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+      document.getElementById("search").value="";
+
+      $('#search').keyup(function(){
+        var ele = document.createElement("div");
+        ele.setAttribute("id","list");
+        par = document.getElementById("ajaxList");
+        par.appendChild(ele);
+        var query = $(this).val();
+        if(query != ''){
+
+
+          $.ajax({
+            url:"ajax_search.php",
+            method: "post",
+            data: {query:query},
+            success:function(data){
+                $('#list').fadeIn();
+                $('#list').html(data);
+
+            }
+          });
+        }
+        if(document.getElementById("search").value=="")
+        $('#list').remove();
+      });
+
+    });
+    </script>
+  </body>
+</html>

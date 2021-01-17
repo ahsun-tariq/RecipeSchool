@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+body {
+		font-family: 'Open Sans', sans-serif;
+		background-image: url(Images/polipatter02small04_re.jpg)
+}
+.container {
+		background-color:#FFFFFF
+}
+.container_logo {
+		background: url(Images/logo_bg_hue_test.gif) 
+}
+.container_logo_simple {
+		background: url(Images/logo_bg_01.gif)
+}
+.container_search {
+		background-color:#000000
+}
+.container_contents {
+		background-color:#FFFFFF
+}
+input.search_window { margin:10px; width:800px; height:25px;
+}
+input.btn { margin:10px; width:81px; height:36px; 
+			background-image:url( 'Images/search_button.png' );
+}
+input.facebook_btn { width:40px; height:40px;
+		background-image: 
+		url(Images/fb_share_btn.png)
+}
+select.category_bar { margin:10px;}
+input.add_recipe_btn { margin:10px; width:496px; height:48px; background-image:url( 'Images/add_recipe_btn.png' );
+}
+.add_recipe_btn_margin { margin: 20px 0px 18px 0px;}
+input.add_more_recipe_btn { margin:10px; width:496px; height:48px; background-image:url( 'Images/add_more_btn.png' );
+}
+.add_recipe_btn_margin { margin: 20px 0px 18px 0px;
+}
+.cpf_container { margin: 0px 20px 0px 20px;
+}
+
+.main-banner{
+  margin: 0 auto;
+  width: 1130px;
+  height: 400px;
+  background-color: #fff;
+  overflow: hidden;
+  position:relative;
+
+}
+
+.main-banner .imgban{
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  transition: all ease-in-out 500ms;
+  -webkit-transition: all ease-in-out 500ms;
+}
+
+.main-banner #imgban3{
+
+  background-image: url(Images/img_main_03.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.main-banner #imgban2{
+
+  background-image: url(Images/img_main_02.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.main-banner #imgban1{
+
+  background-image: url(Images/img_main_01.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.imgbanbtn{
+  width:40px;
+  height:25px;
+  background-color:#000;
+  border-radius: 4px;
+  position: absolute;
+  top:180px;
+  z-index:2000;
+  opacity:0.8;
+  cursor:pointer;
+}
+
+.imgbanbtn:hover{
+opacity: 1.0;
+}
+
+.imgbanbtn-prev{
+  left: 10px;
+  background-image:url(Images/left.png);
+  background-size: 60%;
+  background-position; center;
+  background-repeat: no-repeat;
+
+}
+
+.imgbanbtn-next{
+  right:10px;
+  background-image:url(Images/right.png);
+  background-size: 60%;
+  background-position; center;
+  background-repeat: no-repeat;
+
+}
+
+.main-banner .imgban-box h2{
+  font-size: 60px;
+  color: #FFF;
+  background-color:#000;
+  opacity: 0.7;
+
+}
+
+.main-banner .imgban-box p{
+  padding-top:6px;
+  font-size: 30px;
+  color: #FFE96B;
+}
+
+.main-banner #imgban3 .imgban-box{
+  padding-top: 220px;
+  padding-Left:100px;
+}
+
+.main-banner #imgban2 .imgban-box{
+  padding-top: 220px;
+  padding-right:100px;
+  float: right;
+  text-align: right;
+}
+
+.main-banner #imgban1 .imgban-box{
+  padding-top: 70px;
+  padding-Left:100px;
+}
+
+#slidebox { width: 400px; height: 271px; overflow:hidden; 
+}
+#slider { position: relative; list-style: none; margin: 0; padding: 0; 
+}
+#slider li { position: absolute; left: 0; top: 0; width:400px; height:271px; 
+}
+#slider li img { width:400px; height:271px; border: 0;
+}
+
+input.add_more_btn { margin:10px; width:496px; height:48px; background-image:url( 'Images/add_more_btn.png' );
+}
+.add_more_btn_margin { margin: 20px 0px 18px 0px;}
+
+input.submit_btn{ margin:10px; width:100px; height:44px; background-image:url( 'Images/submit_btn.png' );
+}
+
+.step_window{ margin:0px; width:900px; height:25px;
+}
+
+.ingredients_window{margin:0px; width:900px; height:50px;
+	
+}
+.step_text_box {margin-top:40px;
+				background-color:#FFFFFF
+}
+
+.img-logo {
+		display: block;
+		/*margin: 10px 0px 10px 0px*/
+}
+.div_br { margin: 15, 0, 15, 0;}
+
+
+
+.frontpage_img {
+	float:right;
+	position:relative;
+}
+
+.frontpage_img_text {
+	position:absolute;
+    float: right;
+	width: 173px; 
+	height:839px;
+	background-color:black;   
+    font-size:13px;  
+    color:white;  
+    opacity:0.7; 
+}
+
+.frontpage_img_text2 {
+	padding:0px;  
+    margin:0px; 
+}
+
+.stepp {
+	color:#3DA0D5
+}
+
+/*
+.nav li {
+		text-transform: uppercase;
+}
+
+*/
+
+
+
+#footer {
+		margin-top: 50px;
+		height:46px;
+		background-image: url(Images/footer.gif)
+	
+}
+a {
+	color:#5EC379}
